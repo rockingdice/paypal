@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/smartwalle/paypal"
 	"net/http"
+
+	"github.com/rockingdice/paypal"
 )
 
 func main() {
