@@ -159,10 +159,12 @@ func (this *Client) doRequest(req *http.Request, result interface{}) error {
 	case http.StatusOK, http.StatusCreated:
 		if result != nil {
 			if err = json.Unmarshal(data, result); err != nil {
-				if err.Error() == "json: cannot unmarshal number into Go value of type string" {
-					return nil
-				}
-				return err
+				return nil
+				//临时先改成什么都不处理err
+				// if err.Error() == "json: cannot unmarshal number into Go value of type string" {
+				// 	return nil
+				// }
+				// return err
 			}
 		}
 		return nil
